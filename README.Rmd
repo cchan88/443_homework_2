@@ -8,10 +8,8 @@ output: github_document
 #1: How many flights have a missing dep_time? What other variables are missing? What might these rows represent?
 
 ```{r}
-flights = nycflights13::flights
-a <-filter(flights, is.na(flights$dep_time))
-print(a)
-
+a <-filter(nycflights13 :: flights, is.na(nycflights13::flights$dep_time))
+nrow(a)
 
 
 ```
@@ -23,6 +21,7 @@ print(a)
 
 ```{r}
 library(tidyverse)
+flights <- nycflights13::flights
 b <- transmute(flights,
     dep_time,
     dep_time_minutes = (dep_time %/% 100)*60 + (dep_time %% 100))
@@ -45,8 +44,7 @@ filter(avg_arr_delay > 0) %>% ggplot()+ geom_point(aes(x = avg_arr_delay, y = n_
 
 The proportion of cancelled flights increases as the average delay time increases. 
 
-github link: 
-
+Github Link: https://github.com/cchan88/443_homework_2
 
 
 
