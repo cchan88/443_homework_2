@@ -1,7 +1,9 @@
 ---
 title: "README"
 author: "Chloe Chan"
-output: github_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 
@@ -10,8 +12,6 @@ output: github_document
 ```{r}
 a <-filter(nycflights13 :: flights, is.na(nycflights13::flights$dep_time))
 nrow(a)
-
-
 ```
 
 #1: There are 8255 flights that have a missing departure time. Other variables that are missing from this data are the arrival times, departure delay. These rows might represent the flights that were cancelled or rescheduled. 

@@ -10,7 +10,7 @@ a <-filter(nycflights13 :: flights, is.na(nycflights13::flights$dep_time))
 nrow(a)
 ```
 
-    ## [1] 336776
+    ## [1] 8255
 
 \#1: There are 8255 flights that have a missing departure time. Other
 variables that are missing from this data are the arrival times,
