@@ -71,7 +71,7 @@ delay? Use multiple dyplr operations, all on one line, concluding with
 ``` r
 flights %>% group_by(year, month, day) %>% summarise(n_fcancel = sum(is.na(air_time) | air_time == 0),avg_arr_delay = mean(arr_delay, na.rm = TRUE), avg_dep_delay = mean(dep_delay, na.rm = TRUE) ) %>%
 select(year, month, day, n_fcancel, avg_arr_delay, avg_dep_delay) %>%
-filter(avg_arr_delay > 0) %>% ggplot()+ geom_point(aes(x = avg_arr_delay, y = n_fcancel, color = "red"))+ geom_point(aes(x = avg_dep_delay, y = n_fcancel,color =  "blue")) 
+filter(avg_arr_delay > 0) %>% ggplot()+ geom_point(aes(x = avg_arr_delay, y = n_fcancel, color = "red"))+ geom_point(aes(x = avg_dep_delay, y = n_fcancel,color =  "blue"))
 ```
 
     ## `summarise()` has grouped output by 'year', 'month'. You can override using the `.groups` argument.
